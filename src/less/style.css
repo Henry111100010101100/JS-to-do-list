@@ -81,6 +81,7 @@ header {
   width: 60%;
 }
 .header_logo {
+  margin-bottom: 5px;
   transition: filter, 0.8s;
 }
 .header_logo:hover,
