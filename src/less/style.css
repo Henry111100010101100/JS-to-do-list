@@ -247,6 +247,9 @@ header {
 .main .tasks_list_item_descr_done {
   text-decoration: line-through;
 }
+.main .tasks_list_item img {
+  cursor: pointer;
+}
 .main .tasks_list_item img:last-child {
   margin-left: 16px;
 }
