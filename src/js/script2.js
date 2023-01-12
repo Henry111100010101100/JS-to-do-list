@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
             list.appendChild(newTask);
     
-            input.value = '';
+            
     
             list.addEventListener('click', function(event) {
                 //console.log(event.target);
@@ -65,10 +65,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
                 if(event.target.classList.contains('tasks_list_item_edit')) {
-                    if (event.target.parentElement.previousElementSibling.classList.contains('editting')) {     
+                    if (event.target.parentElement.previousElementSibling.classList.contains('editting')) {
                         return;
-                    } 
-                    else {
+                    } else {
                         event.target.parentElement.previousElementSibling.classList.add('editting');
                         const edit = document.createElement('input');
                         const confirm = document.createElement('button');
@@ -78,8 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
                         confirm.innerText = 'confirm';
                         confirm.addEventListener('click', () => {
                             event.target.parentElement.previousElementSibling.textContent = edit.value;
-                            edit.remove();
-                            confirm.remove();
                             return;
                         });
                     }
