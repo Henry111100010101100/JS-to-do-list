@@ -21,20 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
             descr.classList.add('tasks_list_item_descr');
             descr.textContent = input.value;
     
-/*          const trash = document.createElement('a');
-            trash.classList.add('tasks_list_item_delete');
-            trash.innerHTML = `<img src="icons/main/tasks_list_item_trash.svg" alt="list-item-trash-icon">`;
-            
-            const edit = document.createElement('a');
-            edit.classList.add('tasks_list_item_edit');
-            edit.innerHTML = `<img src="icons/main/tasks_list_item_edit.svg" alt="list-item-edit-icon">`; */
-            
             newTask.appendChild(descr);
-            //taskModificator.append(trash);
-            //taskModificator.append(edit);
-            //newTask.append(taskModificator);
-            
-            
             
             newTask.innerHTML += `
                 <div class="tasks_list_item_modification">
@@ -51,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
             input.value = '';
     
             list.addEventListener('click', function(event) {
-                //console.log(event.target);
+
                 if(event.target.classList.contains('tasks_list_item_delete')) {
                     event.target.parentElement.parentElement.remove();
                 } else {
@@ -62,8 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
             list.addEventListener('click', function(event) {
                 //console.dir(event.target);
                 //event.target.parentElement.previousElementSibling.classList.toggle('tasks_list_item_descr_done');
-
-
+                
                 if(event.target.classList.contains('tasks_list_item_edit')) {
                     if (event.target.parentElement.previousElementSibling.classList.contains('editting')) {     
                         return;
@@ -78,8 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         confirm.innerText = 'confirm';
                         confirm.addEventListener('click', () => {
                             event.target.parentElement.previousElementSibling.textContent = edit.value;
-                            edit.remove();
-                            confirm.remove();
+                            event.target.parentElement.previousElementSibling.classList.remove('editting');
                             return;
                         });
                     }
@@ -88,9 +73,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }); 
             
-            /* edit.addEventListener('click', function() {
-                descr.classList.toggle('tasks_list_item_descr_done');
-            }); */
             input.value = '';
             
         } else {
