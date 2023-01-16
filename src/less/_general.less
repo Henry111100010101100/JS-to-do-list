@@ -173,6 +173,34 @@ header {
 			}	
 		}
 	}
+	.tasks_list{
+		padding-top: 32px;
+		&_item {
+			min-height: 62px;
+			margin-bottom: 16px;
+			padding: 0 24px 0 24px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 8px;
+			background: #F4F5F4;
+			display: none;
+			&_descr {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 14px;
+				color: #1F1F1F;
+				&_done{
+					text-decoration: line-through;
+				}
+			}
+			img {
+				&:last-child {
+					margin-left: 16px;
+				}
+			}
+		}
+	}
 }
 
 .footer {
